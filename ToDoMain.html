@@ -8,24 +8,17 @@
     <script src="ToDoMain.js"></script>
 </head>
 <body>
-    <div id="mainDiv">
-        <h1 id="header">todos</h1>
-            <input type="text" id="textBox" value="test">
-            <ul id="ulList">
-
-                <li class="listObj">
-                    <input type="radio" name="foo" id="foo">
-                    you
-                </li>
-
-                <li class="listObj">
-                        <input type="radio" name="foo" id="foo">
-                </li>
-s
-                 <li class="listObj">
-                            <input type="radio" name="foo" id="foo">
-                </li>
+    <section class="todoapp">
+        <header class="header">
+            <h1>todos</h1>
+                <input id="new-todo" type="text" placeholder="What needs to be done?" onkeypress="lowerCase(event)">
+        </header>
+        <section id="main-list">
+            <ul id="ul-list">
+                <li>hrj</li>
             </ul>
-    </div>
+        </section>
+        <footer class="footer"></footer>
+    </section>
 </body>
 </html>
