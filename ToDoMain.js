@@ -28,11 +28,14 @@ function AddTask()
     Label.innerHTML = input.value;
     Bnt.innerHTML ="X";
     PanelContainer.className= "todoitem";
-    PanelContainer.setAttribute("Id", datalist.length);
+    PanelContainer.setAttribute("id", datalist.length);
     Chekbox.setAttribute('type', 'checkbox');
+    Chekbox.setAttribute('onclick', 'Check(this);');
     Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
     PanelContainer.appendChild(Chekbox);
     PanelContainer.appendChild(Label);
+   
+   
     PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
    let x =  new Datalist(datalist.length,false,String(input.value));
@@ -40,15 +43,17 @@ function AddTask()
    input.value="";
 }
 
-function GetId(){
 
-    var num = 0;
-    for(var i in datalist.length){
-        
-    num = i ; 
-    alert(i);
-    }
-    return num;
+function Check( checkbox){
+
+   node =  checkbox.parentNode;
+   try{
+         datalist[node.getAttribute("id")].isDone = checkbox.checked;
+   }
+   catch{
+            throw "out of bounds "
+   }
+
 }
 
 function RemoveItemFromList(item){
@@ -74,11 +79,11 @@ function OnClickActive()
     {
        if(datalist[i].isDone)
        {
-            document.getElementById(datalist[i].Id).style.visibility='visible';
+            document.getElementById(datalist[i].Id).style.visibility='hidden';
        } 
        else
        {
-            document.getElementById(datalist[i].Id).style.visibility='hidden';
+            document.getElementById(datalist[i].Id).style.visibility='visible';
        }
     }
 }
@@ -88,11 +93,11 @@ function OnClickCompleted()
     {
         if(datalist[i].isDone)
        {
-            document.getElementById(datalist[i].Id).style.visibility='hidden';
+            document.getElementById(datalist[i].Id).style.visibility='visible';
        } 
        else
        {
-        document.getElementById(datalist[i].Id).style.visibility='visible';           
+        document.getElementById(datalist[i].Id).style.visibility='hidden';           
        }
     }
 }
