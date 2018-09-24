@@ -6,8 +6,10 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
     margin-top: 15px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
+    padding-right: 40px;
 }
+
 
 .header
 {
@@ -17,26 +19,47 @@
    padding: 0;
    margin: auto;   
 }
-.new-todo
+
+#txtbox
 {
    width: 300px;
    height: 50px;
-   padding-left: 60;
+   margin-bottom: 60px;
 }
-#ul-list li
+.todoItem
 {
-    list-style-type:none;
-    color: red;
+    background-color: red;
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items:  center;
+}
+.todoItem input
+{
+    text-align: center;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: none;   
+}
+.todoItem label
+{
+    color: green;
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    flex-grow: 5;
+}
+.todoItem button
+{
+    height: 90%;
+    margin-right: 10px;
+    flex-grow: 0.5;
 }
 
-.btn-green{
-
-    width: 100%;
-    height:70px;
-    background-color: green;
-
-
-}
 .card {
     display: flex;
     flex-direction: column;

@@ -10,7 +10,6 @@ document.querySelector("form").addEventListener("submit",function(e){
 
 function AddTask()
 {
-
     let input = document.querySelector("form input");
     let node1 = document.createElement("li");
     let node2 = document.createElement("div");
@@ -26,8 +25,8 @@ function AddTask()
 
    node3.innerHTML  = input.value;
    listOfTodos.appendChild(node1);
-   
-  
+   input.value="";
+   input.placeholder="What else needs to be done?";
 }
 
 
