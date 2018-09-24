@@ -64,15 +64,30 @@ function RemoveItemFromList(item){
 
 function OnClickAll()
 {
-    alert("all");
+    var items=Array.from(document.querySelectorAll(".todoitem"));
+    for(var i in items)
+    {
+        items[i].visable="true";
+    }
 }
 function OnClickActive()
 {
-    alert("Active");
+    var items=Array.from(document.querySelectorAll(".todoitem"));
+    for(var i in items)
+    {
+        if(items[i].querySelector("input")==true)
+        {
+            items[i].visable="true";
+        }
+    }
 }
 function OnClickCompleted()
 {
-    alert("completed");
+    var items=Array.from(document.querySelectorAll(".todoitem"));
+    for(var i in items)
+    {
+        items[i].visable="true";
+    }
 }
 
 
