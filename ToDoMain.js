@@ -4,7 +4,6 @@ var datalist = [];
 var  Datalist = class {
     
     constructor( Id, isDone, InnerTextTask){  // int, bool, Text
-
         this.isDone = isDone;
         this.InnerTextTask = InnerTextTask;
         this.Id = Id;
@@ -64,29 +63,27 @@ function RemoveItemFromList(item){
 
 function OnClickAll()
 {
-    var items=Array.from(document.querySelectorAll(".todoitem"));
+    //document.querySelector(".todoitem input").checked
+    var items=Array.from(document.querySelectorAll(".todoitem input"));
     for(var i in items)
     {
-        items[i].visable="true";
+        items[i].visable=false;
     }
 }
 function OnClickActive()
 {
-    var items=Array.from(document.querySelectorAll(".todoitem"));
-    for(var i in items)
+    for(var i in datalist)
     {
-        if(items[i].querySelector("input")==true)
-        {
-            items[i].visable="true";
-        }
+        
+        
     }
 }
 function OnClickCompleted()
 {
-    var items=Array.from(document.querySelectorAll(".todoitem"));
-    for(var i in items)
+    for(var i = 0; i<datalist.length; i++)
     {
-        items[i].visable="true";
+        if(datalist[i].isDone){ // div = visiable true
+        }
     }
 }
 
