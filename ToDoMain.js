@@ -16,6 +16,7 @@ function AddTask()
     let node2 = document.createElement("div");
     let node3 = document.createElement("h2");
     let node4 = document.createElement("button");
+    node2.className = "card";
     node4.className = "btn-green";
     node4.textContent ="Delete";
     
