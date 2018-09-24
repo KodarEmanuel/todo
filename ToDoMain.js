@@ -18,7 +18,6 @@ document.querySelector("form").addEventListener("submit",function(e){
     return false;
 });
 
-
 function AddTask()
 {
     let input = document.querySelector("form input");
@@ -64,32 +63,42 @@ function RemoveItemFromList(item){
         item[i]
     }
     document.getElementById("main-list").removeChild(node);
+    datalist.pop(x => x.Id=item.Id);
 }
 
 function OnClickAll()
 {
-    //document.querySelector(".todoitem input").checked
-    var items=Array.from(document.querySelectorAll(".todoitem input"));
-    for(var i in items)
+    for(var i=0; i<datalist.length; i++)
     {
-        items[i].visable=false;
+        document.getElementById(datalist[i].Id).style.visibility='visible';
     }
 }
 function OnClickActive()
 {
-    for(var i in datalist)
+    for(var i=0; i<datalist.length; i++)
     {
-        
-        
+       if(datalist[i].isDone)
+       {
+            document.getElementById(datalist[i].Id).style.visibility='hidden';
+       } 
+       else
+       {
+            document.getElementById(datalist[i].Id).style.visibility='visible';
+       }
     }
 }
 function OnClickCompleted()
 {
     for(var i = 0; i<datalist.length; i++)
     {
-        if(datalist[i].isDone){ 
-
-        }
+        if(datalist[i].isDone)
+       {
+            document.getElementById(datalist[i].Id).style.visibility='visible';
+       } 
+       else
+       {
+        document.getElementById(datalist[i].Id).style.visibility='hidden';           
+       }
     }
 }
 
