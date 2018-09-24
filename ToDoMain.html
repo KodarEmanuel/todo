@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Best todo EVER!</title>
     <link rel="StyleSheet" href="ToDoMain.css">
-    <script src="ToDoMain.js"></script>
+    <script src="ToDoMain.js"defer></script>
 </head>
 <body>
     <section class="todoapp">
         <header class="header">
+         <form>
             <h1>todos</h1>
-                <input id="new-todo" type="text" placeholder="What needs to be done?" onkeypress="lowerCase(event)">
+            <input id="txtbox" type="text" placeholder="What needs to be done?">
+        </form>
+            
         </header>
         <section id="main-list">
             <ul id="ul-list">
-                <li>hrj</li>
+                
             </ul>
         </section>
         <footer class="footer"></footer>
