@@ -1,16 +1,14 @@
-
+// spara 
 var datalist = [];
 
 var  Datalist = class {
-
-     
-    constructor( Id, isDone, InnerTextTask){
+    
+    constructor( Id, isDone, InnerTextTask){  // int, bool, Text
 
         this.isDone = isDone;
         this.InnerTextTask = InnerTextTask;
         this.Id = Id;
     }
-
 }
 
 let listOfTodos =  document.getElementById("main-list");
@@ -22,11 +20,9 @@ document.querySelector("form").addEventListener("submit",function(e){
 });
 
 
-
 function AddTask()
 {
     let input = document.querySelector("form input");
-<<<<<<< HEAD
     let PanelContainer = document.createElement("div");
     let Chekbox = document.createElement("input");
     let Label = document.createElement("label");
@@ -41,28 +37,9 @@ function AddTask()
     PanelContainer.appendChild(Label);
     PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
-  let x =  new Datalist(false,String(input.value));
+   let x =  new Datalist(false,String(input.value));
    datalist.push(x);
-   
-  
-=======
-    let node1 = document.createElement("li");
-    let node2 = document.createElement("div");
-    let node3 = document.createElement("h2");
-    let node4 = document.createElement("button");
-    node2.className = "card";
-    node4.className = "btn-green";
-    node4.textContent ="Delete";
-    
-    node2.appendChild(node3);
-    node2.appendChild(node4);
-    node1.appendChild(node2);
-
-   node3.innerHTML  = input.value;
-   listOfTodos.appendChild(node1);
    input.value="";
-   input.placeholder="What else needs to be done?";
->>>>>>> cae250c94c6d5a8ed809233aab548b85227bbe78
 }
 
 function GetId(){
@@ -77,9 +54,24 @@ function GetId(){
 }
 
 function RemoveItemFromList(item){
-/// Delete item 
-alert(item);
+    var node = item.parentNode;
+    console.dir(item);
+    document.getElementById("main-list").removeChild(node);
 }
+
+function OnClickAll()
+{
+    alert("all");
+}
+function OnClickActive()
+{
+    alert("Active");
+}
+function OnClickCompleted()
+{
+    alert("completed");
+}
+
 
 // // function lowerCase  (e) {
     
