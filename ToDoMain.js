@@ -30,14 +30,14 @@ function AddTask()
     Label.innerHTML = input.value;
     Bnt.innerHTML ="X";
     PanelContainer.className= "todoitem";
-    PanelContainer.setAttribute("value",String(GetId()));
+    PanelContainer.setAttribute("value", datalist.length);
     Chekbox.setAttribute('type', 'checkbox');
     Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
     PanelContainer.appendChild(Chekbox);
     PanelContainer.appendChild(Label);
     PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
-   let x =  new Datalist(false,String(input.value));
+   let x =  new Datalist(datalist.length,false,String(input.value));
    datalist.push(x);
    input.value="";
 }
@@ -56,6 +56,9 @@ function GetId(){
 function RemoveItemFromList(item){
     var node = item.parentNode;
     console.dir(item);
+    for(var i in item){
+        item[i]
+    }
     document.getElementById("main-list").removeChild(node);
 }
 
