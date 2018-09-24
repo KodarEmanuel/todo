@@ -49,10 +49,10 @@ function Check( checkbox){
 
    node =  checkbox.parentNode;
    try{
-         datalist[node.getAttribute("id")].isDone = checkbox.checked;
+         datalist[node.id].isDone = checkbox.checked;
    }
    catch{
-            throw "out of bounds "
+            throw "out of bounds ";
    }
 
 }
