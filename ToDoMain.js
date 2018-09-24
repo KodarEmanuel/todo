@@ -25,8 +25,8 @@ document.querySelector("form").addEventListener("submit",function(e){
 
 function AddTask()
 {
-
     let input = document.querySelector("form input");
+<<<<<<< HEAD
     let PanelContainer = document.createElement("div");
     let Chekbox = document.createElement("input");
     let Label = document.createElement("label");
@@ -45,6 +45,24 @@ function AddTask()
    datalist.push(x);
    
   
+=======
+    let node1 = document.createElement("li");
+    let node2 = document.createElement("div");
+    let node3 = document.createElement("h2");
+    let node4 = document.createElement("button");
+    node2.className = "card";
+    node4.className = "btn-green";
+    node4.textContent ="Delete";
+    
+    node2.appendChild(node3);
+    node2.appendChild(node4);
+    node1.appendChild(node2);
+
+   node3.innerHTML  = input.value;
+   listOfTodos.appendChild(node1);
+   input.value="";
+   input.placeholder="What else needs to be done?";
+>>>>>>> cae250c94c6d5a8ed809233aab548b85227bbe78
 }
 
 function GetId(){
