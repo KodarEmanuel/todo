@@ -3,11 +3,6 @@ var datalist = [];
 
 var  Datalist = class {
     
-    constructor( Id, isDone, InnerTextTask){  // int, bool, Text
-        this.isDone = isDone;
-        this.InnerTextTask = InnerTextTask;
-        this.Id = Id;
-    }
 }
 let = listOfTodos=document.getElementById("block-list");
 
@@ -17,12 +12,6 @@ function keyPress(e) {
     }
   }
 
-// let listOfTodos =  document.getElementById("main-list");
-// document.querySelector("form").addEventListener("submit",function(e){
-//     e.preventDefault();
-//     AddTask();
-//     return false;
-// });
 
 function AddTask(input)
 {
@@ -35,7 +24,6 @@ function AddTask(input)
     PanelContainer.className= "Main-TodoBlock";
     Chekbox.className= "Checkbox";
     Bnt.className= "CloseButton";
-    PanelContainer.setAttribute("id", datalist.length);
     Chekbox.setAttribute('type', 'checkbox');
     Chekbox.setAttribute('onclick', 'Check(this);');
     Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
@@ -45,18 +33,22 @@ function AddTask(input)
    
    PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
-   let x =  new Datalist(datalist.length,false,String(input.value));
-   datalist.push(x);
+   datalist.push(PanelContainer);
    input.value="";
 }
 
 
 function Check( checkbox){
-
    node =  checkbox.parentNode;
    try{
-         datalist[node.id].isDone = checkbox.checked;
-         checkbox.parentNode.className="Main-TodoBlock-Done";
+         if(checkbox.parentNode.className=="Main-TodoBlock")
+         {
+             checkbox.parentNode.className="Main-TodoBlock-Done";
+         }
+         else
+         {
+            checkbox.parentNode.className="Main-TodoBlock"
+         }
    }
    catch{
             throw "out of bounds ";
@@ -64,67 +56,59 @@ function Check( checkbox){
 }
 
 function RemoveItemFromList(item){
-    var node = item.parentNode;
-    console.dir(item);
-    for(var i in item){
-        item[i]
-    }
-    document.getElementById("main-list").removeChild(node);
-    datalist.pop(x => x.Id=item.Id);
+    datalist[item.id]=null;
+    datalist = removeNull(datalist);
+
+    item.parentNode.remove();
 }
 
 function OnClickAll()
 {
-    for(var i=0; i<datalist.length; i++)
-    {
-        document.getElementById(datalist[i].Id).style.visibility='visible';
-    }
+   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+   for(var i = 0; a.length; i++)
+   {
+        a[i].style.display="flex"
+   }
 }
 function OnClickActive()
 {
-    for(var i=0; i<datalist.length; i++)
+   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+
+    for(var i=0; i<a.length; i++)
     {
-       if(datalist[i].isDone)
-       {
-            document.getElementById(datalist[i].Id).style.visibility='hidden';
-       } 
-       else
-       {
-            document.getElementById(datalist[i].Id).style.visibility='visible';
-       }
+        if(a[i].className=="Main-TodoBlock")
+        {
+            a[i].style.display="flex"
+        } 
+        else
+        {
+            a[i].style.display="none"
+        }
     }
 }
 function OnClickCompleted()
 {
-    for(var i = 0; i<datalist.length; i++)
+   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+
+    for(var i = 0; i<a.length; i++)
     {
-        if(datalist[i].isDone)
+        if(a[i].className=="Main-TodoBlock")
        {
-            document.getElementById(datalist[i].Id).style.visibility='visible';
+            a[i].style.display="none"
        } 
        else
        {
-        document.getElementById(datalist[i].Id).style.visibility='hidden';           
+            a[i].style.display="flex"
        }
     }
 }
 
-
-// // function lowerCase  (e) {
-    
-
-    
-
-
-// //     if (e.keyCode == 13) {
-// //        AddTask();
-// //     }        
-// }
-
-/*
-  function function1() {
-  var ul = document.getElementById("list");
-  var li = document.createElement("li");
-  li.appendChild(document.createTextNode("Element 4"));
+function removeNull(vaar)
+{
+    let datalist = [];
+    for(var i =0; i<vaar.length; i++)
+    {
+        if(vaar[i] != null) datalist.push(vaar[i]);
+    }
+    return datalist;
 }
-*/

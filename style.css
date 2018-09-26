@@ -1,23 +1,11 @@
-
 .Container {
 
     display: block; 
-    
-   
-    
- 
-}
-.Emptybox-md{
-
-    flex: 1 ;
-    width: 100%;
-   
 }
 
 .Main {
 
     margin: 0 auto;
-        flex: 1;
      display: flex; 
     flex-direction: column; 
     border-style: dashed;
@@ -31,6 +19,8 @@
         box-shadow: 6px 6px 66px 0px rgba(112,46,112,1) !important;
    
  width: 50%;
+ max-width: 1500px;
+ height: auto;
 }
 .Main .Main-Header{
 
@@ -42,8 +32,8 @@
 .Main .Main-Header h1{
 
 
-    color: rgba(175, 47, 47, 0.15); font-size: 80px;
-
+    color: rgba(175, 47, 47, 0.15); 
+    font-size: 90px;
 }
 
 .Main .Main-Body {
@@ -57,7 +47,7 @@
 
      
         font-size: 30pt; 
-       
+        width:80%;
         margin: 10px;
 
     }
@@ -68,7 +58,6 @@
           height: 600px; 
           
 
-
     }
     .Main .Main-TodoBlock {
 
@@ -77,6 +66,7 @@
           display: flex;
            flex-direction: row;
             border-color: black; 
+            margin: 5px;
            
 
     }
@@ -86,23 +76,13 @@
         height: 60px;
         padding: 20px;
          cursor: pointer;
+         content:url("img/uncheck.png");
         
 
     }
 
-     .Unchecked{
 
-        content:url("img/uncheck.png");
-
-    }
-
-    .Checked {
-
-       
-       
-    }
-
-    .Main .Main-TodoBlock label{
+    .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label {
 
         font-size: 50px; padding: 20px; flex: 5;
 
@@ -119,23 +99,30 @@
 
    } 
 
-   Main-TodoBlock-Done{
+   .Main-TodoBlock-Done{
 
+    justify-content: flex-start;
+    display: flex;
+     flex-direction: row;
+      border-color: black; 
     background-color: rgb(0, 255, 157);
+    margin: 5px;
 
    }
 
-   Main-TodoBlock-Done .Checkbox{
+  
 
+   .Main-TodoBlock-Done .Checkbox{
+
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+     cursor: pointer;
+   
     content:url("img/checked.png");
 
    }
 
-   .Done {
-    
-
-
-   }
 
    .Hidden {
  
@@ -156,4 +143,16 @@
   background-color: rgb(46, 186, 204);
   transform: translateY(4px);
 
-   } 
+   }
+
+   .footer
+   {
+      display: flex;
+      justify-content: center;
+   }
+   .footer button
+   {
+       margin-left: 5px;
+       margin-right: 5px;
+       margin-bottom: 10px;
+   }
