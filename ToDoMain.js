@@ -9,25 +9,32 @@ var  Datalist = class {
         this.Id = Id;
     }
 }
+let = listOfTodos=document.getElementById("block-list");
 
-let listOfTodos =  document.getElementById("main-list");
+function keyPress(e) {
+    if ( e.keyCode == 13 ) {
+        AddTask(e.target);
+    }
+  }
 
-document.querySelector("form").addEventListener("submit",function(e){
-    e.preventDefault();
-    AddTask();
-    return false;
-});
+// let listOfTodos =  document.getElementById("main-list");
+// document.querySelector("form").addEventListener("submit",function(e){
+//     e.preventDefault();
+//     AddTask();
+//     return false;
+// });
 
-function AddTask()
+function AddTask(input)
 {
-    let input = document.querySelector("form input");
     let PanelContainer = document.createElement("div");
-    let Chekbox = document.createElement("input");
+    let Chekbox = document.createElement("img");
     let Label = document.createElement("label");
-    let Bnt = document.createElement("button");
+    let Bnt = document.createElement("img");
     Label.innerHTML = input.value;
     Bnt.innerHTML ="X";
-    PanelContainer.className= "todoitem";
+    PanelContainer.className= "Main-TodoBlock";
+    Chekbox.className= "Checkbox";
+    Bnt.className= "CloseButton";
     PanelContainer.setAttribute("id", datalist.length);
     Chekbox.setAttribute('type', 'checkbox');
     Chekbox.setAttribute('onclick', 'Check(this);');
@@ -36,7 +43,7 @@ function AddTask()
     PanelContainer.appendChild(Label);
    
    
-    PanelContainer.appendChild(Bnt);
+   PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
    let x =  new Datalist(datalist.length,false,String(input.value));
    datalist.push(x);
@@ -49,11 +56,11 @@ function Check( checkbox){
    node =  checkbox.parentNode;
    try{
          datalist[node.id].isDone = checkbox.checked;
+         checkbox.parentNode.className="Main-TodoBlock-Done";
    }
    catch{
             throw "out of bounds ";
    }
-
 }
 
 function RemoveItemFromList(item){
