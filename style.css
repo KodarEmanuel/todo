@@ -98,7 +98,7 @@
 
     .Checked {
 
-        content:url("img/checked.png");
+       
        
     }
 
@@ -119,9 +119,21 @@
 
    } 
 
+   Main-TodoBlock-Done{
+
+    background-color: rgb(0, 255, 157);
+
+   }
+
+   Main-TodoBlock-Done .Checkbox{
+
+    content:url("img/checked.png");
+
+   }
+
    .Done {
     
- background-color: rgb(0, 255, 157);
+
 
    }
 
