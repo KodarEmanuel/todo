@@ -68,7 +68,6 @@
           height: 600px; 
           
 
-
     }
     .Main .Main-TodoBlock {
 
@@ -86,6 +85,7 @@
         height: 60px;
         padding: 20px;
          cursor: pointer;
+         
         
 
     }
@@ -96,11 +96,7 @@
 
     }
 
-    .Checked {
-
-       
-       
-    }
+   
 
     .Main .Main-TodoBlock label{
 
@@ -119,9 +115,15 @@
 
    } 
 
-   Main-TodoBlock-Done{
+   .Main-TodoBlock-Done{
 
     background-color: rgb(0, 255, 157);
+
+   }
+
+   Main-TodoBlock .Checkbox{
+
+    content:url("img/uncheck.png");
 
    }
 
@@ -131,11 +133,6 @@
 
    }
 
-   .Done {
-    
-
-
-   }
 
    .Hidden {
  
