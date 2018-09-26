@@ -76,13 +76,25 @@
         height: 60px;
         padding: 20px;
          cursor: pointer;
+<<<<<<< HEAD
          content:url("img/uncheck.png");
+=======
+         
+>>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
         
 
     }
 
+<<<<<<< HEAD
 
     .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label {
+=======
+    
+
+   
+
+    .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label, {
+>>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
 
         font-size: 50px; padding: 20px; flex: 5;
 
@@ -110,6 +122,7 @@
 
    }
 
+<<<<<<< HEAD
   
 
    .Main-TodoBlock-Done .Checkbox{
@@ -122,6 +135,20 @@
     content:url("img/checked.png");
 
    }
+
+=======
+   Main-TodoBlock .Checkbox{
+
+    content:url("img/uncheck.png");
+
+   }
+
+   Main-TodoBlock-Done .Checkbox{
+
+    content:url("img/checked.png");
+
+   }
+>>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
 
 
    .Hidden {
