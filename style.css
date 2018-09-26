@@ -90,15 +90,11 @@
 
     }
 
-     .Unchecked{
-
-        content:url("img/uncheck.png");
-
-    }
+    
 
    
 
-    .Main .Main-TodoBlock label{
+    .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label, {
 
         font-size: 50px; padding: 20px; flex: 5;
 
