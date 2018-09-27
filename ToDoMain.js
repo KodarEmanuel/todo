@@ -65,7 +65,7 @@ function RemoveItemFromList(item){
 function OnClickAll()
 {
    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
-   for(var i = 0; a.length; i++)
+   for(var i = 0; i< a.length; i++)
    {
         a[i].style.display="flex"
    }
