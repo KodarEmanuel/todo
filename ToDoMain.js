@@ -1,29 +1,26 @@
 // spara 
-var datalist = [];
 
-var  Datalist = class {
-    
-}
 let listOfTodos = document.getElementById("block-list");
 
 let Texbox = document.getElementById("txtbox");
 
  document.getElementById("show-all").addEventListener("click",(ev)=>{
   
-    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+    let a = Array.from(document.querySelectorAll(".Main-ListBox div"));
     for(var i = 0; i< a.length; i++)
     {
          a[i].style.display="flex"
     }
-
 });
 
 document.getElementById("show-completed").addEventListener("click",(ev)=>{
   
-    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+    let a = Array.from(document.querySelectorAll(".Main-ListBox div"))
 
     for(var i = 0; i<a.length; i++)
     {
+
+        a[i].style.display = (a[i].className=="Main-TodoBlock")?"none":"flex";
         if(a[i].className=="Main-TodoBlock")
        {
             a[i].style.display="none"
@@ -55,12 +52,9 @@ document.getElementById("show-active").addEventListener("click",(ev)=>{
 
 });
 
-
-
-
-
 Texbox.addEventListener("keypress",(e)=>{
 
+   
     if ( e.keyCode == 13 ) {
         AddTask(e.target);
     }
