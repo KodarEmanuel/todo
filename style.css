@@ -13,9 +13,9 @@
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
-        background-color: rgb(255, 255, 255);
+        background-color: shadowrgb(255, 255, 255);
         -webkit-box-shadow: 6px 6px 66px 0px rgba(112,46,112,1)  !important;
-        -moz-box-shadow: 6px 6px 66px 0px rgba(112,46,112,1)  !important;
+        -moz-box-: 6px 6px 66px 0px rgba(112,46,112,1)  !important;
         box-shadow: 6px 6px 66px 0px rgba(112,46,112,1) !important;
    
  width: 50%;
@@ -76,25 +76,12 @@
         height: 60px;
         padding: 20px;
          cursor: pointer;
-<<<<<<< HEAD
          content:url("img/uncheck.png");
-=======
-         
->>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
         
 
     }
 
-<<<<<<< HEAD
-
     .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label {
-=======
-    
-
-   
-
-    .Main .Main-TodoBlock label ,  .Main .Main-TodoBlock-Done label, {
->>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
 
         font-size: 50px; padding: 20px; flex: 5;
 
@@ -122,7 +109,6 @@
 
    }
 
-<<<<<<< HEAD
   
 
    .Main-TodoBlock-Done .Checkbox{
@@ -136,19 +122,6 @@
 
    }
 
-=======
-   Main-TodoBlock .Checkbox{
-
-    content:url("img/uncheck.png");
-
-   }
-
-   Main-TodoBlock-Done .Checkbox{
-
-    content:url("img/checked.png");
-
-   }
->>>>>>> 369e6a722809bec65b7a8a07c0598045844090cb
 
 
    .Hidden {
