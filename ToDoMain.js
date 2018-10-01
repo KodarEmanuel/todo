@@ -6,6 +6,13 @@ let listOfTodos = document.getElementById("block-list");
 
 let Texbox = document.getElementById("txtbox");
 
+document.getElementById("remove-completed").addEventListener("click", (ev)=>
+{
+    ClearComp();
+    OnAll();
+    state = "all";
+});
+
  document.getElementById("show-all").addEventListener("click",(ev)=>{
   
     OnAll();
@@ -106,6 +113,13 @@ function OnActive()
         })
    
 
+}
+function ClearComp()
+{
+    let a = ListBoxList();
+    a.forEach((i)=>{
+        if(!(i.className=="Main-TodoBlock")) i.remove();
+    })
 }
 function DisplayState(){
 let stateString = String(state);
