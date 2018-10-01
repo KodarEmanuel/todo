@@ -93,7 +93,7 @@ body{
 
 
     }
-   .Main .Main-TodoBlock img.CloseButton  {
+   .Main .Main-TodoBlock img.CloseButton , .Main .Main-TodoBlock-Done img.CloseButton {
 
      padding: 20px;
       cursor: pointer;
@@ -103,6 +103,7 @@ body{
    
 
    } 
+   
 
    .Main-TodoBlock-Done{
 

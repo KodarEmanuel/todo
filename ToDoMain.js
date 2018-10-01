@@ -6,13 +6,69 @@ var state = "all";
 var  Datalist = class {
     
 }
-let = listOfTodos=document.getElementById("block-list");
+let listOfTodos = document.getElementById("block-list");
 
-function keyPress(e) {
+let Texbox = document.getElementById("txtbox");
+
+ document.getElementById("show-all").addEventListener("click",(ev)=>{
+  
+    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+    for(var i = 0; i< a.length; i++)
+    {
+         a[i].style.display="flex"
+    }
+
+});
+
+document.getElementById("show-completed").addEventListener("click",(ev)=>{
+  
+    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+
+    for(var i = 0; i<a.length; i++)
+    {
+        if(a[i].className=="Main-TodoBlock")
+       {
+            a[i].style.display="none"
+       } 
+       else
+       {
+            a[i].style.display="flex"
+       }
+    }
+
+});
+
+
+document.getElementById("show-active").addEventListener("click",(ev)=>{
+  
+    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+
+    for(var i=0; i<a.length; i++)
+    {
+        if(a[i].className=="Main-TodoBlock")
+        {
+            a[i].style.display="flex"
+        } 
+        else
+        {
+            a[i].style.display="none"
+        }
+    }
+
+});
+
+
+
+
+
+Texbox.addEventListener("keypress",(e)=>{
+
     if ( e.keyCode == 13 ) {
         AddTask(e.target);
     }
-  }
+
+});
+
 
 
 function AddTask(input)
@@ -22,20 +78,38 @@ function AddTask(input)
     let Label = document.createElement("label");
     let Bnt = document.createElement("img");
     Label.innerHTML = input.value;
-    Bnt.innerHTML ="X";
     PanelContainer.className= "Main-TodoBlock";
     Chekbox.className= "Checkbox";
-    Bnt.className= "CloseButton";
-    Chekbox.setAttribute('type', 'checkbox');
-    Chekbox.setAttribute('onclick', 'Check(this);');
-    Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
+   
+    // Bnt.className= "CloseButton";
+    // Chekbox.setAttribute('type', 'checkbox');
+   
+    // Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
+    // Bnt.addEventListener("onclick", RemoveItemFromList(this.Bnt));
+Bnt.addEventListener("click",(ev)=> {
+    Bnt.parentNode.remove();
+})
+
+    Chekbox.addEventListener('click', (ev)=>{
+  PanelContainer.className = (PanelContainer.className=="Main-TodoBlock")?"Main-TodoBlock-Done":"Main-TodoBlock";
+    });
+
+    PanelContainer.addEventListener("mouseover",(ev)=> {
+            
+            Bnt.className ="CloseButton";
+    });
+   
+    PanelContainer.addEventListener("mouseleave",(ev)=> {
+     
+        Bnt.className ="CloseButton Hidden";
+});
+
     PanelContainer.appendChild(Chekbox);
     PanelContainer.appendChild(Label);
-   
-   
    PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
    datalist.push(PanelContainer);
+  
    input.value="";
 
     if(state == "all")
@@ -53,80 +127,77 @@ function AddTask(input)
 }
 
 
-function Check( checkbox){
-   node =  checkbox.parentNode;
-   try{
-         if(checkbox.parentNode.className=="Main-TodoBlock")
-         {
-             checkbox.parentNode.className="Main-TodoBlock-Done";
-         }
-         else
-         {
-            checkbox.parentNode.className="Main-TodoBlock"
-         }
-   }
-   catch{
-            throw "out of bounds ";
-   }
-}
+// function Check( checkbox){
+//  let  node =  checkbox.parentNode;
+//    try{
+//          if(checkbox.parentNode.className=="Main-TodoBlock")
+//          {
+//              checkbox.parentNode.className="Main-TodoBlock-Done";
+//          }
+//          else
+//          {
+//             checkbox.parentNode.className="Main-TodoBlock"
+//          }
+//    }
+//    catch{
+//             throw "out of bounds ";
+//    }
+// }
 
-function RemoveItemFromList(item){
-    datalist[item.id]=null;
-    datalist = removeNull(datalist);
+// function RemoveItemFromList(item){
+//     datalist[item.id]=null;
+//     datalist = removeNull(datalist);
 
-    item.parentNode.remove();
-}
+//     item.parentNode.remove();
+// }
 
-function OnClickAll()
-{
-   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
-   for(var i = 0; i< a.length; i++)
-   {
-        a[i].style.display="flex"
-   }
-   state = "all";
-}
-function OnClickActive()
-{
-   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+// function OnClickAll()
+// {
+//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+//    for(var i = 0; i< a.length; i++)
+//    {
+//         a[i].style.display="flex"
+//    }
+// }
+// function OnClickActive()
+// {
+//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
 
-    for(var i=0; i<a.length; i++)
-    {
-        if(a[i].className=="Main-TodoBlock")
-        {
-            a[i].style.display="flex"
-        } 
-        else
-        {
-            a[i].style.display="none"
-        }
-    }
-    state = "active";
-}
-function OnClickCompleted()
-{
-   var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+//     for(var i=0; i<a.length; i++)
+//     {
+//         if(a[i].className=="Main-TodoBlock")
+//         {
+//             a[i].style.display="flex"
+//         } 
+//         else
+//         {
+//             a[i].style.display="none"
+//         }
+//     }
+// }
+// function OnClickCompleted()
+// {
+//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
 
-    for(var i = 0; i<a.length; i++)
-    {
-        if(a[i].className=="Main-TodoBlock")
-       {
-            a[i].style.display="none"
-       } 
-       else
-       {
-            a[i].style.display="flex"
-       }
-    }
-     state = "completed";
-}
+//     for(var i = 0; i<a.length; i++)
+//     {
+//         if(a[i].className=="Main-TodoBlock")
+//        {
+//             a[i].style.display="none"
+//        } 
+//        else
+//        {
+//             a[i].style.display="flex"
+//        }
+//     }
+// }
 
-function removeNull(vaar)
-{
-    let datalist = [];
-    for(var i =0; i<vaar.length; i++)
-    {
-        if(vaar[i] != null) datalist.push(vaar[i]);
-    }
-    return datalist;
-}
+// function removeNull(vaar)
+// {
+//     let datalist = [];
+//     for(var i =0; i<vaar.length; i++)
+//     {
+//         if(vaar[i] != null) datalist.push(vaar[i]);
+//     }
+//     return datalist;
+// }
