@@ -1,5 +1,7 @@
 // spara 
 var datalist = [];
+//State
+var state = "all";
 
 var  Datalist = class {
     
@@ -35,6 +37,19 @@ function AddTask(input)
    listOfTodos.appendChild(PanelContainer);
    datalist.push(PanelContainer);
    input.value="";
+
+    if(state == "all")
+    {
+        OnClickAll();
+    }
+    else  if(state == "active")
+    {
+        OnClickActive();
+    }
+    else  if(state == "completed")
+    {
+        OnClickCompleted();
+    }
 }
 
 
@@ -69,6 +84,7 @@ function OnClickAll()
    {
         a[i].style.display="flex"
    }
+   state = "all";
 }
 function OnClickActive()
 {
@@ -85,6 +101,7 @@ function OnClickActive()
             a[i].style.display="none"
         }
     }
+    state = "active";
 }
 function OnClickCompleted()
 {
@@ -101,6 +118,7 @@ function OnClickCompleted()
             a[i].style.display="flex"
        }
     }
+     state = "completed";
 }
 
 function removeNull(vaar)
