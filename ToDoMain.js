@@ -1,4 +1,6 @@
-// spara 
+
+//State
+let state = "all";
 
 let listOfTodos = document.getElementById("block-list");
 
@@ -6,49 +8,22 @@ let Texbox = document.getElementById("txtbox");
 
  document.getElementById("show-all").addEventListener("click",(ev)=>{
   
-    let a = Array.from(document.querySelectorAll(".Main-ListBox div"));
-    for(var i = 0; i< a.length; i++)
-    {
-         a[i].style.display="flex"
-    }
+    OnAll();
+    state ="all";
+   
 });
 
 document.getElementById("show-completed").addEventListener("click",(ev)=>{
   
-    let a = Array.from(document.querySelectorAll(".Main-ListBox div"))
-
-    for(var i = 0; i<a.length; i++)
-    {
-
-        a[i].style.display = (a[i].className=="Main-TodoBlock")?"none":"flex";
-        if(a[i].className=="Main-TodoBlock")
-       {
-            a[i].style.display="none"
-       } 
-       else
-       {
-            a[i].style.display="flex"
-       }
-    }
-
+   OnCompleted();
+   state ="completed";
 });
 
 
 document.getElementById("show-active").addEventListener("click",(ev)=>{
   
-    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
-
-    for(var i=0; i<a.length; i++)
-    {
-        if(a[i].className=="Main-TodoBlock")
-        {
-            a[i].style.display="flex"
-        } 
-        else
-        {
-            a[i].style.display="none"
-        }
-    }
+   OnActive();
+   state ="active";
 
 });
 
@@ -57,6 +32,7 @@ Texbox.addEventListener("keypress",(e)=>{
    
     if ( e.keyCode == 13 ) {
         AddTask(e.target);
+        DisplayState();
     }
 
 });
@@ -73,17 +49,13 @@ function AddTask(input)
     PanelContainer.className= "Main-TodoBlock";
     Chekbox.className= "Checkbox";
    
-    // Bnt.className= "CloseButton";
-    // Chekbox.setAttribute('type', 'checkbox');
-   
-    // Bnt.setAttribute('Onclick', 'RemoveItemFromList(this);');
-    // Bnt.addEventListener("onclick", RemoveItemFromList(this.Bnt));
 Bnt.addEventListener("click",(ev)=> {
     Bnt.parentNode.remove();
 })
 
     Chekbox.addEventListener('click', (ev)=>{
   PanelContainer.className = (PanelContainer.className=="Main-TodoBlock")?"Main-TodoBlock-Done":"Main-TodoBlock";
+  DisplayState();
     });
 
     PanelContainer.addEventListener("mouseover",(ev)=> {
@@ -100,83 +72,49 @@ Bnt.addEventListener("click",(ev)=> {
     PanelContainer.appendChild(Label);
    PanelContainer.appendChild(Bnt);
    listOfTodos.appendChild(PanelContainer);
-   datalist.push(PanelContainer);
+  
   
    input.value="";
+
+    
 }
 
 
-// function Check( checkbox){
-//  let  node =  checkbox.parentNode;
-//    try{
-//          if(checkbox.parentNode.className=="Main-TodoBlock")
-//          {
-//              checkbox.parentNode.className="Main-TodoBlock-Done";
-//          }
-//          else
-//          {
-//             checkbox.parentNode.className="Main-TodoBlock"
-//          }
-//    }
-//    catch{
-//             throw "out of bounds ";
-//    }
-// }
 
-// function RemoveItemFromList(item){
-//     datalist[item.id]=null;
-//     datalist = removeNull(datalist);
+function OnCompleted()
+{
+   let a = ListBoxList();
+   a.forEach((i)=>{
+       i.style.display = (i.className=="Main-TodoBlock")?"none":"flex";
+   });
+}
 
-//     item.parentNode.remove();
-// }
+function OnAll(){
+   
+    let a = ListBoxList();
+    a.forEach((i)=>{
+        i.style.display ="flex";
+    })
+   
+}
 
-// function OnClickAll()
-// {
-//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
-//    for(var i = 0; i< a.length; i++)
-//    {
-//         a[i].style.display="flex"
-//    }
-// }
-// function OnClickActive()
-// {
-//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+function OnActive()
+{
+        let a = ListBoxList();
+        a.forEach((i)=>{
+            i.style.display = (i.className=="Main-TodoBlock")?"flex":"none";
+        })
+   
 
-//     for(var i=0; i<a.length; i++)
-//     {
-//         if(a[i].className=="Main-TodoBlock")
-//         {
-//             a[i].style.display="flex"
-//         } 
-//         else
-//         {
-//             a[i].style.display="none"
-//         }
-//     }
-// }
-// function OnClickCompleted()
-// {
-//    var a = Array.from(document.querySelectorAll(".Main-ListBox div"))
+}
+function DisplayState(){
+let stateString = String(state);
+(stateString=="all")?OnAll():(stateString=="active")? OnActive(): OnCompleted();
 
-//     for(var i = 0; i<a.length; i++)
-//     {
-//         if(a[i].className=="Main-TodoBlock")
-//        {
-//             a[i].style.display="none"
-//        } 
-//        else
-//        {
-//             a[i].style.display="flex"
-//        }
-//     }
-// }
+}
 
-// function removeNull(vaar)
-// {
-//     let datalist = [];
-//     for(var i =0; i<vaar.length; i++)
-//     {
-//         if(vaar[i] != null) datalist.push(vaar[i]);
-//     }
-//     return datalist;
-// }
+function ListBoxList(){
+
+var a = Array.from(document.querySelectorAll(".Main-ListBox div"));
+return a;
+}
