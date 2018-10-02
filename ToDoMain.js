@@ -58,7 +58,7 @@ Texbox.addEventListener("keypress",(e)=>{
    
     if ( e.keyCode == 13 ) {
         AddTask(e.target);
-        DisplayState();
+        DisplayState(enumState.showAll);
     }
 
 });
@@ -121,7 +121,7 @@ function CheckAll()
             i.className="Main-TodoBlock-Done";
         });
 }
-//use enumState to call this or call this with all, active , completed as string //defualt is all 
+//use enumState as Helper to call this, or call this with "all", "active" , "completed" as string //defualt is "all" 
 function DisplayState(Enumstate){
 let stateString = String(Enumstate);
 (stateString=="completed")?OnCompleted():(stateString=="active")? OnActive():OnAll(); 
