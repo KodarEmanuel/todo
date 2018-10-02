@@ -1,6 +1,12 @@
 //Scope protected 
 (function(){
 //Gloabal Variables
+const enumState ={
+  get showAll(){ return"all";},
+  get showActive(){ return"active";},
+  get showCompleted(){ return"completed";},
+
+}
 let state = "all";
 let listOfTodos;
 let Texbox;
@@ -20,33 +26,30 @@ let Texbox;
    
   document.getElementById("check-All").addEventListener("click", (ev)=>{
     CheckAll();
-    state ="all";
+    DisplayState(enumState.showAll);
 });
 
 document.getElementById("remove-completed").addEventListener("click", (ev)=>{
     ClearComp();
-    OnAll();
-    state = "all";
+    DisplayState(enumState.showAll);
 });
 
  document.getElementById("show-all").addEventListener("click",(ev)=>{
   
-    OnAll();
-    state ="all";
+    DisplayState(enumState.showAll);
    
 });
 
 document.getElementById("show-completed").addEventListener("click",(ev)=>{
+    
+    DisplayState(enumState.showCompleted);
   
-   OnCompleted();
-   state ="completed";
 });
 
 
 document.getElementById("show-active").addEventListener("click",(ev)=>{
   
-   OnActive();
-   state ="active";
+    DisplayState(enumState.showActive);
 
 });
 
@@ -104,6 +107,24 @@ Bnt.addEventListener("click",(ev)=> {
 
 
 
+function ClearComp()
+{
+    let a = ListBoxList();
+    a.forEach((i)=>{
+        if(!(i.className=="Main-TodoBlock")) i.remove();
+    });
+}
+function CheckAll()
+{
+    let a = ListBoxList();
+        a.forEach((i)=>{
+            i.className="Main-TodoBlock-Done";
+        });
+}
+//use enumState to call this or call this with all, active , completed as string //defualt is all 
+function DisplayState(Enumstate){
+let stateString = String(Enumstate);
+(stateString=="completed")?OnCompleted():(stateString=="active")? OnActive():OnAll(); 
 function OnCompleted()
 {
    let a = ListBoxList();
@@ -130,23 +151,8 @@ function OnActive()
    
 
 }
-function ClearComp()
-{
-    let a = ListBoxList();
-    a.forEach((i)=>{
-        if(!(i.className=="Main-TodoBlock")) i.remove();
-    });
-}
-function CheckAll()
-{
-    let a = ListBoxList();
-        a.forEach((i)=>{
-            i.className="Main-TodoBlock-Done";
-        });
-}
-function DisplayState(){
-let stateString = String(state);
-(stateString=="all")?OnAll():(stateString=="active")? OnActive(): OnCompleted();
+
+
 
 }
 
@@ -155,5 +161,4 @@ function ListBoxList(){
  
 return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 }
-
 })();
