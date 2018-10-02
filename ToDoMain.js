@@ -7,7 +7,7 @@ const enumState ={
   get showCompleted(){ return"completed";},
 
 }
-let state = "all";
+
 let listOfTodos;
 let Texbox;
 
