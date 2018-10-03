@@ -6,7 +6,7 @@ var TodoApp;
             function IBaseService() {
             }
             IBaseService.prototype.test = function () {
-                alert("HELLO WORLD");
+                alert("HELLO WORLD test");
             };
             return IBaseService;
         }());
