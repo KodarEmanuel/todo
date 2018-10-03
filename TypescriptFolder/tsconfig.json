@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+
+        "sourceMap": true
+    }, 
+    "files": [
+        "TodoApp.ts",
+        "BaseService.ts"
+    ]
+
+}

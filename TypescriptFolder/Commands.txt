@@ -1,0 +1,3 @@
+tsc TodoApp.ts
+tsc BaseService.ts
+cd
