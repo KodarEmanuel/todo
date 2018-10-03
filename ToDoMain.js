@@ -164,6 +164,7 @@ return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 
 function HideRemoveCompleted()
 {
+    //hej
     let a = ListBoxList();
     if(a.length==0)
     {
