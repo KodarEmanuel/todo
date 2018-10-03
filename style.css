@@ -161,5 +161,9 @@
        margin-bottom: 10px;
    }
    .footer button:active { 
-    background-color: yellow;
+    background-color: yellow;  
+}
+#remove-completed
+{
+    display: none;
 }

@@ -32,6 +32,7 @@ let Texbox;
 document.getElementById("remove-completed").addEventListener("click", (ev)=>{
     ClearComp();
     DisplayState(enumState.showAll);
+    HideRemoveCompleted();
 });
 
  document.getElementById("show-all").addEventListener("click",(ev)=>{
@@ -77,11 +78,13 @@ function AddTask(input)
    
 Bnt.addEventListener("click",(ev)=> {
     Bnt.parentNode.remove();
+    HideRemoveCompleted();
 })
 
     Chekbox.addEventListener('click', (ev)=>{
   PanelContainer.className = (PanelContainer.className=="Main-TodoBlock")?"Main-TodoBlock-Done":"Main-TodoBlock";
   DisplayState();
+  HideRemoveCompleted();
     });
 
     PanelContainer.addEventListener("mouseover",(ev)=> {
@@ -148,11 +151,7 @@ function OnActive()
         a.forEach((i)=>{
             i.style.display = (i.className=="Main-TodoBlock")?"flex":"none";
         });
-   
-
 }
-
-
 
 }
 
@@ -161,4 +160,23 @@ function ListBoxList(){
  
 return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 }
+
+function HideRemoveCompleted()
+{
+    let a = ListBoxList();
+    for(let i = 0; i <a.length; i++){
+        if(a[i].className=="Main-TodoBlock-Done")
+        {
+            document.getElementById("remove-completed").style.display="flex"
+            break;
+        }
+        else
+        {
+            document.getElementById("remove-completed").style.display="none"
+        }
+    }
+}
+
 })();
+
+
