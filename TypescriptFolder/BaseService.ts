@@ -4,7 +4,7 @@ namespace TodoApp.BaseService {
    test():void;
   }
 
-  export  class IBaseService implements IBaseService{
+  export  class BaseService implements IBaseService{
 
    public test():void {
         alert("HELLO WORLD");

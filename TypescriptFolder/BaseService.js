@@ -1,15 +1,15 @@
 var TodoApp;
 (function (TodoApp) {
     var BaseService;
-    (function (BaseService) {
-        var IBaseService = /** @class */ (function () {
-            function IBaseService() {
+    (function (BaseService_1) {
+        var BaseService = /** @class */ (function () {
+            function BaseService() {
             }
-            IBaseService.prototype.test = function () {
+            BaseService.prototype.test = function () {
                 alert("HELLO WORLD");
             };
-            return IBaseService;
+            return BaseService;
         }());
-        BaseService.IBaseService = IBaseService;
+        BaseService_1.BaseService = BaseService;
     })(BaseService = TodoApp.BaseService || (TodoApp.BaseService = {}));
 })(TodoApp || (TodoApp = {}));
