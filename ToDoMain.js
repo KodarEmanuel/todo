@@ -180,6 +180,7 @@ function HideRemov  eCompleted()
         {
             document.getElementById("remove-completed").style.display="none"
         }
+        //hej
     }
 }
 
