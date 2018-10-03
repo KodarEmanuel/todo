@@ -1,11 +1,11 @@
 //Scope protected 
-
 (function(){
 //Gloabal Variables
 const enumState ={
   get showAll(){ return"all";},
   get showActive(){ return"active";},
   get showCompleted(){ return"completed";},
+
 }
 
 let listOfTodos;
@@ -18,7 +18,6 @@ let Texbox;
 
     })();
 //Functions
-
  function Init() 
  {
   listOfTodos  = document.getElementById("block-list");
@@ -52,7 +51,7 @@ document.getElementById("show-completed").addEventListener("click",(ev)=>{
 document.getElementById("show-active").addEventListener("click",(ev)=>{
   
     DisplayState(enumState.showActive);
- 
+
 });
 
 Texbox.addEventListener("keypress",(e)=>{
@@ -162,15 +161,10 @@ function ListBoxList(){
 return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 }
 
-function HideRemov  eCompleted()
+function HideRemoveCompleted()
 {
     let a = ListBoxList();
-    if(a.length==0)
-    {
-        document.getElementById("remove-completed").style.display="none"
-        return;
-    }
-    for(let i = 0; i < a.length; i++){
+    for(let i = 0; i <a.length; i++){
         if(a[i].className=="Main-TodoBlock-Done")
         {
             document.getElementById("remove-completed").style.display="flex"
