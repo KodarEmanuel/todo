@@ -1,7 +1,10 @@
 namespace TodoApp {
- import   basesObjects= TodoApp.BaseService;
+
+ import  BaseTodo = TodoApp.BaseService;
+
 (function main():void {
-    var x:basesObjects.IBaseService = new basesObjects.BaseService;
+    var x:BaseTodo.IBaseService =  new BaseTodo.BaseTodo();;
+    
 })();
 
 

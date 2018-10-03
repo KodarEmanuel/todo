@@ -4,10 +4,10 @@ namespace TodoApp.BaseService {
    test():void;
   }
 
-  export  class BaseService implements IBaseService{
+  export  class BaseTodo implements IBaseService{
 
    public test():void {
-        alert("HELLO WORLD test");
+    
     }
       
 }

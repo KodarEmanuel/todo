@@ -28,6 +28,7 @@ let Texbox;
   document.getElementById("check-All").addEventListener("click", (ev)=>{
     CheckAll();
     DisplayState(enumState.showAll);
+    HideRemoveCompleted();
 });
 
 document.getElementById("remove-completed").addEventListener("click", (ev)=>{
