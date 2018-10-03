@@ -162,7 +162,7 @@ function ListBoxList(){
 return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 }
 
-function HideRemoveCompleted()
+function HideRemov  eCompleted()
 {
     let a = ListBoxList();
     if(a.length==0)
