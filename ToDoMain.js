@@ -165,7 +165,11 @@ return Array.from(document.querySelectorAll(".Main-ListBox div"));;
 function HideRemoveCompleted()
 {
     let a = ListBoxList();
-  
+    if(a.length==0)
+    {
+        document.getElementById("remove-completed").style.display="none"
+        return;
+    }
     for(let i = 0; i < a.length; i++){
         if(a[i].className=="Main-TodoBlock-Done")
         {
