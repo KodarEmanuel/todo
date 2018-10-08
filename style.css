@@ -13,16 +13,24 @@
     flex-direction: column; 
     
     border-radius: 10px 10px 10px 10px;
-   
-        background-color: rgb(255, 255, 255);
-       
-       
-        box-shadow: 6px 6px 66px 0px rgba(112,46,112,1) !important;
-   
- width: 50%;
- max-width: 1500px;
- height: auto;
+    background-color: rgb(255, 255, 255);      
+    box-shadow: 6px 6px 66px 0px#d3d3d3 !important;  
+    width: 50%;
+    max-width: 1500px;
+    height: auto;
 }
+@media screen and (max-width: 950px) {
+    .Main {
+       width: 80%;
+    }
+}
+@media screen and (max-width: 680px) {
+    .Main {
+       width: 100%;
+    }
+}
+
+
 .Main .Main-Header{
 
     flex: 1;
