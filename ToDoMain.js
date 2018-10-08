@@ -18,7 +18,7 @@
     
         })();
     //Functions
-    
+    //TEST
      function Init() 
      {
       listOfTodos  = document.getElementById("block-list");
