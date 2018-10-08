@@ -1,7 +1,9 @@
 var TodoApp;
 (function (TodoApp) {
-    var basesObjects = TodoApp.BaseService;
+    var BaseTodo = TodoApp.BaseService;
     (function main() {
-        var x = new basesObjects.BaseService;
+        var x = new BaseTodo.BaseTodo();
+        ;
     })();
 })(TodoApp || (TodoApp = {}));
+//# sourceMappingURL=TodoApp.js.map

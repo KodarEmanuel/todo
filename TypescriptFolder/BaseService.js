@@ -1,11 +1,12 @@
-var test;
-(function (test) {
-    class foo {
-        get bar() {
-            return this._bar;
+var TodoApp;
+(function (TodoApp) {
+    var BaseService;
+    (function (BaseService) {
+        class BaseTodo {
+            test() {
+            }
         }
-        set bar(theBar) {
-            this._bar = theBar;
-        }
-    }
-})(test || (test = {}));
+        BaseService.BaseTodo = BaseTodo;
+    })(BaseService = TodoApp.BaseService || (TodoApp.BaseService = {}));
+})(TodoApp || (TodoApp = {}));
+//# sourceMappingURL=BaseService.js.map

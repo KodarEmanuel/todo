@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
 
+        "target": "ES6", 
+        "module": "commonjs",
         "sourceMap": true
     }, 
     "files": [
         "TodoApp.ts",
-        "BaseService.ts"
+        "BaseService.ts",
+        "TodoAppUI.ts"
+
+
     ]
 
 }
