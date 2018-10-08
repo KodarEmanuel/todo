@@ -1,8 +1,0 @@
-tsc TodoApp.ts
-tsc BaseService.ts
-tsc TodoAppUI.ts
-cd todo\TypescriptFolder
-tsc TodoApp.ts --target "ES6"
-tsc BaseService.ts --target "ES6"
-tsc TodoAppUI.ts --target "ES6"
-/ import { TodoAppUI } from "./TodoAppUI";
