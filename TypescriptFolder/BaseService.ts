@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+namespace test
+{
+>>>>>>> a3b5e16f554b7d4d34b431595e7d73d6c21efc93
 
 // import * as TodoAppUI from './TodoAppUI'
 // // import TodoAppUI = require("./TodoAppUI");
@@ -178,6 +183,7 @@ this.InputElement.addEventListener("keypress", (ev)=>{
   }); 
   
 }
+<<<<<<< HEAD
   
 }
 
@@ -187,3 +193,7 @@ this.InputElement.addEventListener("keypress", (ev)=>{
 
 
 
+=======
+    
+    }
+>>>>>>> a3b5e16f554b7d4d34b431595e7d73d6c21efc93
