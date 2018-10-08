@@ -16,7 +16,6 @@
     flex-direction: column; 
     
     border-radius: 10px 10px 10px 10px;
-<<<<<<< HEAD
     background-color: rgb(255, 255, 255);      
     box-shadow: 6px 6px 66px 0px#d3d3d3 !important;  
     width: 50%;
@@ -33,17 +32,6 @@
     .Main {
        width: 100%;
     }
-=======
-   
-        background-color: rgb(255, 255, 255);
-       
-       
-        box-shadow: 6px 6px 66px 0px rgba(112,46,112,1) !important;
-   
- width: 50%;
- max-width: 1500px;
- height: auto;
->>>>>>> 80ca971e11405f1b8b8c606183b41df9c7eb6cbb
 }
 .Main .Main-Header{
 
@@ -126,7 +114,6 @@
     display: flex;
      flex-direction: row;
       border-color: rgba(0, 0, 0, 0.959); 
-    background-color: rgb(0, 255, 157);
     margin: 5px;
  
     
@@ -163,9 +150,6 @@
    .Main .Main-TodoBlock:hover {
  
   cursor: pointer;
-  background-color: rgb(46, 186, 204);
-  transform: translateY(4px);
-
    }
 
    .footer
