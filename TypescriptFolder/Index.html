@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
   <link rel="stylesheet" href="style.css">
-  <script src="ToDoMain.js"defer></script>
+
 
 </head>
 <body >
@@ -16,9 +16,9 @@
         <h1>Todos</h1>
     </div>
     <div class="Main-Body">
-        <button id="check-All">all</button>
+        <!-- <button id="check-All">all</button>
         <input class="Main-Body-TextInput" type="text" id="txtbox" placeholder="What needs to be done ?" 
-        maxlength="20">
+        maxlength="20"> -->
     </div>
         <div class="Main-ListBox" id="block-list">
             <!-- Exempel-->
@@ -46,6 +46,7 @@
                 <!-- <img class="CloseButton  Hidden"    > -->
         </div>
         <footer class="footer">
+            <span class="todo-count"></span>
             <button id="show-all">All</button>
             <button id="show-active">Active</button>
             <button  id="show-completed">Completed</button>
@@ -54,4 +55,8 @@
     </div>
 </div>
 </body>
+
+<script src="TodoScript.js"></script>
+
+
 </html>

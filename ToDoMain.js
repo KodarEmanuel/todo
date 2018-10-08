@@ -110,7 +110,15 @@ Bnt.addEventListener("click",(ev)=> {
     
 }
 
+function TodoCount(){
 
+    let a = ListBoxList();
+  var count = a.find(X=> x.className = "Main-TodoBlock").length;
+    // a.forEach((i)=>{
+    //     if(!(i.className=="Main-TodoBlock")) i.remove();
+    // });
+
+}
 
 function ClearComp()
 {
@@ -146,6 +154,7 @@ function OnAll(){
     });
    
 }
+
 
 function OnActive()
 {
