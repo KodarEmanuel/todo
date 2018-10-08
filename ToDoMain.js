@@ -29,6 +29,7 @@
         CheckAll();
         DisplayState(enumState.showAll);
         HideRemoveCompleted();
+        TodoCount();
     });
     
     document.getElementById("remove-completed").addEventListener("click", (ev)=>{
